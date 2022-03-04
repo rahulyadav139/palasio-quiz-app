@@ -1,0 +1,28 @@
+.quizCard {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.quizCard img {
+  aspect-ratio: 4/3;
+}
+.quizCard:hover {
+  transform: scale(1.05);
+}
+.number,
+.time {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--white-color);
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+.number {
+  top: 0;
+}
+.time {
+  bottom: 0;
+}

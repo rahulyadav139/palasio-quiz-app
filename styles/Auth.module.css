@@ -1,0 +1,97 @@
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.main section {
+  padding: 2rem;
+  flex-basis: 50%;
+}
+.main img {
+  object-fit: contain;
+}
+
+.form {
+  width: 100%;
+  max-width: 29rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: auto;
+}
+.form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+.form input {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.wrapperUsername {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* .form .wrapper-username div {
+  flex-grow: 1;
+} */
+
+/* .form .form__greet-msg {
+  font-size: 1.2rem;
+  color: var(--primary-color-dark);
+  font-weight: bold;
+  text-align: center;
+} */
+
+.instruction {
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.switchMsg {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.switchMethod {
+  color: var(--primary-color-dark);
+  border-bottom: 1px solid var(--primary-color-dark);
+  cursor: pointer;
+}
+
+.inputWithIcon {
+  margin-bottom: 1rem;
+}
+
+.inputWithIcon label {
+  display: inline-flex;
+  margin: 0;
+  cursor: pointer;
+}
+.inputWithIcon input {
+  margin: 0;
+  width: auto;
+  font-size: 1rem;
+}
+
+.invalidMsg {
+  color: var(--red-color);
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .main section:nth-child(2) {
+    display: none;
+  }
+}

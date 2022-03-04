@@ -1,0 +1,46 @@
+.answerCardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.answerCardHead p:first-child {
+  font-weight: bold;
+}
+.answerCardHead p:first-child::first-letter {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.correctAnswerScore {
+  color: var(--green-color);
+}
+.incorrectAnswerScore {
+  color: var(--red-color);
+}
+.correctAnswerScore,
+.incorrectAnswerScore {
+  font-weight: bold;
+}
+.options {
+  margin: 1rem auto;
+}
+.option {
+  padding: 0.5rem;
+  border: 1.5px solid var(--secondary-color);
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+.correctAnswer {
+  background: linear-gradient(225deg, var(--green-bg-color));
+  /* border-color: var(--green-color); */
+  border: none;
+  color: var(--white-color);
+}
+.incorrectAnswer {
+  background: linear-gradient(45deg, var(--red-bg-color));
+  /* border-color: var(--red-color); */
+  border: none;
+  color: var(--white-color);
+}

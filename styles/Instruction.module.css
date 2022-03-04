@@ -1,0 +1,17 @@
+.category {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.category img {
+  aspect-ratio: 16/9;
+}
+
+.msg {
+  margin-bottom: 1rem;
+}
+.list {
+  margin-left: 1.5rem;
+}
+.list li {
+  background: transparent;
+}

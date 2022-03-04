@@ -1,0 +1,23 @@
+.btnDashboard {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+.quizzesWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.msg {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 45px) {
+  .quizzesWrapper {
+    grid-template-columns: 1fr;
+  }
+}

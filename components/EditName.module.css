@@ -1,0 +1,23 @@
+.head {
+  margin: 1rem auto;
+}
+
+.form {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.form label,
+.form input {
+  width: 100%;
+}
+
+.btnLink {
+  cursor: pointer;
+}

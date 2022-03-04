@@ -1,0 +1,23 @@
+.quiz {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.quiz h2 {
+  margin-bottom: 1rem;
+}
+.quiz input {
+  display: none;
+}
+.quiz label {
+  display: block;
+  padding: 0.8rem;
+  border: 1.5px solid var(--secondary-color);
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.quiz label:hover,
+.quiz input:checked + label {
+  background: var(--secondary-color);
+  color: var(--white-color);
+}

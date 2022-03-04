@@ -1,0 +1,14 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+.summary button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.answerSheet {
+  margin: 1rem auto;
+}

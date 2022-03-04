@@ -1,0 +1,143 @@
+.dashboard {
+  display: flex;
+  gap: 2rem;
+}
+
+.dashboardAvatar {
+  border: none;
+}
+.dashboardAvatar img {
+  border-radius: 1rem;
+  border: none;
+}
+.dashboardInfo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progressBar {
+  accent-color: var(--primary-color-dark);
+  width: 100%;
+}
+.activityItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.activityItem {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.statNumber {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.statTitle {
+  font-size: 0.75rem;
+  color: var(--grey-color);
+}
+.featured {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 2rem;
+  gap: 1rem;
+}
+.featured input[type='radio'] {
+  display: none;
+}
+.sectionTitle {
+  margin-bottom: 1rem;
+}
+.categoriesWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* league board */
+.leagues {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.league {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--grey-color);
+  order: 1;
+}
+.league > div:first-child {
+  background: transparent;
+}
+.currentLeague {
+  border: 2px solid var(--green-color);
+}
+.league .activityStat {
+  margin-left: auto;
+}
+.league .avatar {
+  background: transparent;
+}
+
+.quizzes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  order: 1;
+  width: 100%;
+}
+
+.userProgress label {
+  margin-right: 1rem;
+}
+
+.button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  color: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 1.5px solid var(--primary-color-dark);
+}
+.hidden {
+  display: none;
+}
+
+.btnProfile {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--primary-color-dark);
+  text-decoration: underline;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.startMsg {
+  color: var(--primary-color-dark);
+  grid-column: 1 / -1;
+}
+
+@media only screen and (max-width: 450px) {
+  .featured {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
