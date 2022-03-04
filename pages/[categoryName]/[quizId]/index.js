@@ -36,7 +36,7 @@ const QuizNow = props => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [time]);
+  }, [time, router]);
 
   useEffect(() => {
     defaultThemeHandler();

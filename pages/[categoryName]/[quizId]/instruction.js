@@ -33,7 +33,7 @@ const QuizInstructions = props => {
       setQuiz(quiz);
       setLoading(false);
     })();
-  }, [isReady, defaultThemeHandler, sendData, router]);
+  }, [isReady, defaultThemeHandler, sendData, router, quizId]);
 
   return (
     <Fragment>
