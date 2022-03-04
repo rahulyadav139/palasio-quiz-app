@@ -14,15 +14,15 @@ import {
 import LoadingSpinner from '../../../components/ui/LoadingSpinner';
 import { useTheme } from '../../../utils/theme-context';
 
-const quizInstructions = props => {
+const QuizInstructions = props => {
   const [quiz, setQuiz] = useState(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const category = router.query.categoryName;
-  const quizId = router.query.quizId;
   const { sendData } = useFetch();
   const isReady = router.isReady;
   const { defaultThemeHandler } = useTheme();
+  const quizId = router.query.quizId;
 
   useEffect(() => {
     defaultThemeHandler();
@@ -33,7 +33,7 @@ const quizInstructions = props => {
       setQuiz(quiz);
       setLoading(false);
     })();
-  }, [isReady]);
+  }, [isReady, defaultThemeHandler, sendData, router]);
 
   return (
     <Fragment>
@@ -102,7 +102,7 @@ const quizInstructions = props => {
               </ol>
             </div>
             <div className="flex end">
-              <Link href={`/${category}/${quizId}`}>
+              <Link href={`/${category}/${quizId}`} passHref>
                 <button className="btn rounded-edge primary">Start Quiz</button>
               </Link>
             </div>
@@ -116,4 +116,4 @@ const quizInstructions = props => {
 
 export const getServerSideProps = withSessionSsr(withoutUser);
 
-export default quizInstructions;
+export default QuizInstructions;

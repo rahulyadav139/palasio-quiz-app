@@ -1,5 +1,6 @@
 const textFormatter = str => {
   const formattedText = str
+    .trim()
     .split(' ')
     .map(el => el[0].toUpperCase() + el.slice(1).toLowerCase())
     .join(' ');
@@ -15,14 +16,14 @@ const timeFormatter = seconds => {
   return `${min}:${sec}`;
 };
 
-const dateFormatter = date=> {
+const dateFormatter = date => {
   const formattedDate = date.toLocaleString('en-IN', {
     year: '2-digit',
     month: 'short',
     day: '2-digit',
   });
 
-  return formattedDate
-}
+  return formattedDate;
+};
 
 export { textFormatter, timeFormatter, dateFormatter };

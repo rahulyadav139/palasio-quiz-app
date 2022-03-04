@@ -25,18 +25,6 @@ const QuizNow = props => {
   const [time, setTime] = useState('');
 
   useEffect(() => {
-    defaultThemeHandler();
-
-    if (!isReady) return;
-    (async () => {
-      const data = await sendData('/api/quiz', { quizId });
-      time = data.quizTime;
-
-      setTime(data.quizTime);
-      setQuiz(data);
-      setLoading(false);
-    })();
-
     const timer = setInterval(() => {
       if (time === 0) {
         clearInterval(timer);
@@ -48,7 +36,20 @@ const QuizNow = props => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [isReady]);
+  }, [time]);
+
+  useEffect(() => {
+    defaultThemeHandler();
+
+    if (!isReady) return;
+    (async () => {
+      const data = await sendData('/api/quiz', { quizId });
+
+      setTime(data.quizTime);
+      setQuiz(data);
+      setLoading(false);
+    })();
+  }, [isReady, defaultThemeHandler, sendData, quizId, router]);
 
   const getScoreStr = quiz => {
     const correctNumOfAnswers = quiz.questions.reduce((acc, el) => {

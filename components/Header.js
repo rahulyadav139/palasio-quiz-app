@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Header = props => {
   return (
     <header className={`${styles.header} shadow`}>
-      <Link href="/">
+      <Link href="/" passHref>
         <div className="brand">
           <span className="brand__logo">
             <i className="bi bi-hurricane"></i>
@@ -20,10 +20,12 @@ const Header = props => {
       <nav>
         <ul>
           <li>
-            <Link href="/login">Login</Link>
+            <Link href="/login" passHref>
+              Login
+            </Link>
           </li>
           <li>
-            <Link href="/signup">
+            <Link href="/signup" passHref>
               <button className="btn primary">Signup</button>
             </Link>
           </li>

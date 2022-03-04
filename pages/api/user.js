@@ -3,7 +3,6 @@ import { ObjectId } from 'mongodb';
 
 const getUser = async (req, res) => {
   const userId = req.body.userId;
-  console.log('test');
 
   if (req.method === 'POST') {
     const collection = await mongoConnect('users');

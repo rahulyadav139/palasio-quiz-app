@@ -6,7 +6,7 @@ import Link from 'next/link';
 const QuizHistoryCard = props => {
   const { id, title, date, time, score, category } = props;
   return (
-    <Link href={`/${category}/${id}/result`}>
+    <Link href={`/${category}/${id}/result`} passHref>
       <div className={styles.wrapper}>
         <div className="heading-4">{textFormatter(title)}</div>
         <div>

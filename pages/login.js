@@ -131,7 +131,7 @@ const Login = props => {
 
           <p className={styles.switchMsg}>
             Already a member?{' '}
-            <Link href="/signup">
+            <Link href="/signup" passHref>
               <span className={styles.switchMethod}>Signup here</span>
             </Link>
           </p>

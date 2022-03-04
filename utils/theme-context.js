@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 
 const ThemeContext = React.createContext({
   theme: false,
@@ -17,7 +17,7 @@ const ThemeProvider = props => {
     }
   };
 
-  const defaultThemeHandler = () => {
+  const defaultThemeHandler = useCallback(() => {
     const prevTheme = localStorage.getItem('theme');
 
     if (prevTheme === 'dark') {
@@ -27,7 +27,8 @@ const ThemeProvider = props => {
       setIsDarkTheme(false);
       localStorage.setItem('theme', 'light');
     }
-  };
+  }, [setIsDarkTheme]);
+
   const defaultValue = {
     theme: isDarkTheme,
     themeHandler: toggleTheme,

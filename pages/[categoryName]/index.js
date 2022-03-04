@@ -19,6 +19,8 @@ const Quizzes = props => {
   const isReady = router.isReady;
   const { defaultThemeHandler } = useTheme();
 
+  const userId = props.user.id
+
   useEffect(() => {
     defaultThemeHandler();
     if (!isReady) return;
@@ -27,7 +29,7 @@ const Quizzes = props => {
 
       if (quizzes.length === 0) return router.replace('/404');
       const user = await sendData('/api/user', {
-        userId: props.user.id,
+        userId,
       });
 
       if (user.quizzes) {
@@ -40,7 +42,7 @@ const Quizzes = props => {
       } else setQuizzes(quizzes);
       setLoading(false);
     })();
-  }, [isReady]);
+  }, [isReady, defaultThemeHandler, sendData, userId, category, router]);
 
   const backToDashboardHandler = () => {
     router.push('/dashboard');

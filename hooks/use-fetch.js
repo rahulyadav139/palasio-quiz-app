@@ -1,5 +1,7 @@
+import { useCallback } from 'react';
+
 const useFetch = () => {
-  const sendData = async (path, transferData) => {
+  const sendData = useCallback(async (path, transferData) => {
     try {
       const res = await fetch(path, {
         method: 'POST',
@@ -15,9 +17,9 @@ const useFetch = () => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }, []);
 
-  const getData = async path => {
+  const getData = useCallback(async path => {
     try {
       const res = await fetch(path);
 
@@ -29,7 +31,7 @@ const useFetch = () => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }, []);
 
   return {
     sendData,

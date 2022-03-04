@@ -26,16 +26,19 @@ const Dashboard = props => {
   const { defaultThemeHandler } = useTheme();
   const [tab, setTab] = useState(1);
 
+  console.log(prop.user.id);
+  const userId = props.user.id;
+
   useEffect(() => {
     defaultThemeHandler();
     (async () => {
-      const user = await sendData('/api/user', { userId: props.user.id });
+      const user = await sendData('/api/user', { userId });
       const categories = await getData('/api/categories');
       setCategories(categories);
       setUser(user);
       setLoading(false);
     })();
-  }, []);
+  }, [defaultThemeHandler, sendData, getData, userId]);
 
   const getStats = () => {
     if (!user.quizzes) return [0, 0, 0];
@@ -108,7 +111,7 @@ const Dashboard = props => {
               <div className={styles.dashboardInfo}>
                 <div className="flex space-between">
                   <h1>{user && user.fullName}</h1>
-                  <Link href="/profile">
+                  <Link href="/profile" passHref>
                     <div className={styles.btnProfile}>Edit Profile</div>
                   </Link>
                 </div>
@@ -197,7 +200,7 @@ const Dashboard = props => {
                     ))}
                   {!user.quizzes && (
                     <p className={styles.startMsg}>
-                      You haven't attempted any quiz. Start you journey...
+                      You have not attempted any quiz. Start you journey...
                     </p>
                   )}
                 </div>

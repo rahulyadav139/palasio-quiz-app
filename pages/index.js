@@ -20,7 +20,7 @@ const Home = props => {
             <span className="text-primary-dark">|</span> Fun
           </h3>
           <div>
-            <Link href="/login">
+            <Link href="/login" passHref>
               <button className="btn primary">Get Started</button>
             </Link>
           </div>

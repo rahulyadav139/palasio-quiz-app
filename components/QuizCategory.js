@@ -4,7 +4,7 @@ import { textFormatter } from '../utils/formatter';
 
 const QuizCategory = props => {
   return (
-    <Link href={`/${props.title}`}>
+    <Link href={`/${props.title}`} passHref>
       <div className={styles.category}>
         <img className="img-responsive" src={props.image} alt={props.title} />
         <h3 className={`${styles.title} heading-6`}>

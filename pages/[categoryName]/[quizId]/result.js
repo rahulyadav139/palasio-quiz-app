@@ -19,21 +19,22 @@ const Result = props => {
   const isReady = router.isReady;
   const { defaultThemeHandler } = useTheme();
 
+  const userId = props.user.id;
+  const quizId = router.query.quizId;
+
   useEffect(() => {
     defaultThemeHandler();
     if (!isReady) return;
 
-    const quizId = router.query.quizId;
-
     (async () => {
-      const user = await sendData('/api/user', { userId: props.user.id });
+      const user = await sendData('/api/user', { userId });
 
       const selectedQuiz = user.quizzes.find(el => el._id === quizId);
 
       setQuiz(selectedQuiz);
       setLoading(false);
     })();
-  }, [isReady]);
+  }, [isReady, quizId, userId, sendData, defaultThemeHandler]);
 
   const getResultText = () => {
     const [scored, totalMarks] = quiz.score.split('/');
@@ -74,7 +75,7 @@ const Result = props => {
                 </p>
               </div>
 
-              <Link href="/dashboard">
+              <Link href="/dashboard" passHref>
                 <button className="btn primary rounded-edge">Dashboard</button>
               </Link>
             </div>

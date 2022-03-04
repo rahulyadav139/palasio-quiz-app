@@ -9,14 +9,15 @@ const EditName = props => {
   const [editName, setEditName] = useState(false);
   const [user, setUser] = useState(null);
   const { sendData } = useFetch();
+  const userId = props.userId;
 
   useEffect(() => {
     (async () => {
-      const user = await sendData('/api/user', { userId: props.userId });
+      const user = await sendData('/api/user', { userId });
 
       setUser(user);
     })();
-  }, []);
+  }, [sendData, userId, editName]);
   const {
     value: firstName,
     setIsTouched: firstNameIsTouched,
