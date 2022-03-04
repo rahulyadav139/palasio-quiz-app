@@ -26,7 +26,6 @@ const Dashboard = props => {
   const { defaultThemeHandler } = useTheme();
   const [tab, setTab] = useState(1);
 
-  console.log(prop.user.id);
   const userId = props.user.id;
 
   useEffect(() => {
