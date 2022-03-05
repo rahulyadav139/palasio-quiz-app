@@ -2,7 +2,7 @@ import { withIronSessionApiRoute, withIronSessionSsr } from 'iron-session/next';
 
 const cookieDetails = {
   cookieName: 'palasio-user',
-  password: 'g2(dqztb;?kadfgsu.sfsX9baKj.IK0!L,L}~',
+  password: process.env.COOKIE_SECRET_KEY,
   cookieOptions: {
     secure: process.env.NODE_ENV === 'production',
     maxAge: 30 * 60,
