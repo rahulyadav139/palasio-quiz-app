@@ -15,6 +15,7 @@ const Quiz = props => {
   return (
     <div className={styles.quiz}>
       <h2 className="heading-5">{question}</h2>
+
       {options.map((el, i) => (
         <div key={el + '_' + i + 1}>
           <input
@@ -23,7 +24,7 @@ const Quiz = props => {
             name="answer"
             id={el + '_' + i + 1}
             value={el}
-            checked={selectedOption === el}
+            checked={selectedOption == el}
           />
           <label htmlFor={el + '_' + i + 1}>{el}</label>
         </div>
