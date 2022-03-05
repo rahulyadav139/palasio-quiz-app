@@ -7,8 +7,8 @@ module.exports = nextConfig;
 
 module.exports = {
   env: {
-    DB_USERNAME: 'rahul',
-    DB_PASSWORD: '4obHX7fDphFFe6bG',
-    COOKIE_SECRET_KEY: 'g2(dqztb;?kadfgsu.sfsX9baKj.IK0!L,L}~',
+    DB_USERNAME: process.env.DB_USERNAME,
+    DB_PASSWORD: process.env.DB_PASSWORD,
+    COOKIE_SECRET_KEY: process.env.COOKIE_SECRET_KEY,
   },
 };
