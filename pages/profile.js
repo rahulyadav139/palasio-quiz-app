@@ -8,6 +8,7 @@ import { withSessionSsr, withoutUser } from '../utils/with-session';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 import { useFetch } from '../hooks/use-fetch';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const Profile = props => {
   const [loading, setLoading] = useState(false);
@@ -30,7 +31,12 @@ const Profile = props => {
       <Fragment>
         <AdminHeader />
         <Layout>
-          <h1>Profile</h1>
+          <div className="flex space-between">
+            <h1>Profile</h1>
+            <Link href="/dashboard" passHref>
+              <button className="btn primary rounded-edge">Dashboard</button>
+            </Link>
+          </div>
           <div className="hr-line fad"></div>
           <div className={styles.wrapper}>
             <EditName userId={userId} />

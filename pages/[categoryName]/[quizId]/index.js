@@ -11,6 +11,8 @@ import { timeFormatter, dateFormatter } from '../../../utils/formatter';
 
 const answers = [];
 
+let readyToSubmit = true;
+
 const QuizNow = props => {
   const [loading, setLoading] = useState(true);
   const [index, setIndex] = useState(0);
@@ -85,12 +87,16 @@ const QuizNow = props => {
       userAttemptedQuiz.date = dateFormatter(new Date());
       userAttemptedQuiz.score = getScoreStr(userAttemptedQuiz);
 
-      await sendData('/api/answer', {
-        quiz: userAttemptedQuiz,
-        userId: props.user.id,
-      });
+      if (readyToSubmit) {
+        readyToSubmit = false;
 
-      router.replace(`/${category}/${quizId}/result`);
+        await sendData('/api/answer', {
+          quiz: userAttemptedQuiz,
+          userId: props.user.id,
+        });
+
+        router.replace(`/${category}/${quizId}/result`);
+      }
       return;
     }
     setIndex(prev => prev + 1);

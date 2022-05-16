@@ -77,6 +77,24 @@ const Login = props => {
   const hideModalHandler = () => {
     setShowModal(false);
   };
+
+  const guestLoginHandler = async () => {
+    setLoading(true);
+
+    const data = await sendData('/api/login', {
+      email: process.env.TEST_USERNAME,
+      password: process.env.TEST_PASSWORD,
+    });
+
+    if (data.error) {
+      setLoading(false);
+      setToast(data.message);
+      return;
+    }
+
+    setLoading(false);
+    router.push('/dashboard');
+  };
   return (
     <Fragment>
       <Header />
@@ -127,6 +145,13 @@ const Login = props => {
             <button type="submit" className="btn primary">
               Login
             </button>
+            <button
+              type="button"
+              onClick={guestLoginHandler}
+              className={`${styles.btnGuestLogin} btn primary outline`}
+            >
+              Guest Login
+            </button>
           </form>
 
           <p className={styles.switchMsg}>
@@ -136,7 +161,7 @@ const Login = props => {
             </Link>
           </p>
         </section>
-        <section>
+        <section className={styles.hideInMobile}>
           <img className="img-responsive" src="/login.png" alt="login" />
         </section>
       </main>
