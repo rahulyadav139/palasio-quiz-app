@@ -154,7 +154,7 @@ const Signup = props => {
       <Header />
 
       <main className={styles.main}>
-        <section>
+        <section className={styles.hideInMobile}>
           <img className="img-responsive" src="/add-user.png" alt="signup" />
         </section>
         <section>

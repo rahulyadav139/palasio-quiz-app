@@ -85,13 +85,16 @@
   font-size: 0.8rem;
   margin-bottom: 1rem;
 }
+.btnGuestLogin {
+  margin-top: 1rem;
+}
 
 @media only screen and (max-width: 450px) {
   .main {
     flex-direction: column;
   }
 
-  .main section:nth-child(2) {
+  .main .hideInMobile {
     display: none;
   }
 }
